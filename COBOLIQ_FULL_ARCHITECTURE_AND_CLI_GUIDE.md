@@ -28,15 +28,21 @@ coboliq <PORTFOLIO_PATH> [OPTIONS]
 | `--format python-port` | **Python Port Skeleton**. Generates typed Python port package (`--package <NAME>`). | Modernizing COBOL to Python. |
 | `--format impact-sim` | **What-If Impact Simulator**. Simulates blast radius (`--override "VAR:old->new"`). | Refactoring risk analysis. |
 | `--format modernization-readiness` | **Modernization Scorecard**. Ranks programs by externalization readiness. | Portfolio roadmap planning. |
+| `--format isn` | **Inter-Service Narrative (ISN)**. Executive narrative summary without AST noise. | Executive briefings & non-tech audits. |
 
 ### 1.3. Extraction & Compliance Flags
 
 ```bash
-# Extract Magic Numbers & Rules into INI / JSON
+# Extract Embedded Copybook Tables bit-perfectly as JSON
+coboliq ./portfolio --extract-tables --out tables.json
+
+# Extract Magic Numbers & Rules into INI / JSON / MD
 coboliq ./portfolio --extract-rules --format ini --out rules.ini
+coboliq ./portfolio --extract-rules --format json --out rules.json
 
 # Extract 88-Level COBOL Condition Enums
 coboliq ./portfolio --extract-states --format json --out states.json
+coboliq ./portfolio --extract-states --format python --out enums.py
 
 # Extract COBOL OCCURS Tables → SQL DDL Schemas
 coboliq ./portfolio --extract-schemas --format sql --out schema.sql
@@ -44,17 +50,43 @@ coboliq ./portfolio --extract-schemas --format sql --out schema.sql
 # Extract LINKAGE Data Flow Traces
 coboliq ./portfolio --extract-dataflow --format md --out flow.md
 
+# Extract Exception Paths (GO TO Classification & Error Handling)
+coboliq ./portfolio --extract-exception-paths --format md --out exception_flows.md
+
+# Extract Shadow Hybrid Dual-Write Export Bridge (NATS/Kafka Blueprints)
+coboliq ./portfolio --extract-bridge --format json --out bridge_export_ledger.json
+
 # Extract SWI-Prolog Declarative Knowledge Base
 coboliq ./portfolio --extract-prolog --out facts.pl
 
 # Compliance Scans (DORA & GDPR)
-coboliq ./portfolio --compliance dora8 --out dora8.md   # ICT Risk Management
-coboliq ./portfolio --compliance dora9 --out dora9.md   # Systems & Component Inventory
-coboliq ./portfolio --compliance gdpr30 --out gdpr30.md # Data Processing Lineage Records
+coboliq ./portfolio --compliance dora8 --out dora8.md   # ICT Risk Management (Article 8)
+coboliq ./portfolio --compliance dora9 --out dora9.md   # ICT Systems Inventory (Article 9)
+coboliq ./portfolio --compliance gdpr30 --out gdpr30.md # Data Processing Lineage Records (Article 30)
 
-# Portfolio Version Diffing
+# Portfolio Version Diffing (Audit Deliberations)
 coboliq ./v2 --diff ./v1 --out audit-diff.md
 ```
+
+---
+
+## 1.4. Generational Risk Decay & Multi-Language Infrastructure
+
+1. **Generational Risk Decay Tracking**:
+   - For legacy program families (e.g. `ESCAL056` -> `ESCAL117` -> `ESCAL212`), CobolIQ tracks **refactoring entropy** over 14+ years of regulatory updates.
+   - Automatically flags where nested `IF`/`EVALUATE` blocks creeped in, scoring paragraph complexity from `0` (Clean) to `100` (CRITICAL).
+
+2. **Exception Path Classification (`--extract-exception-paths`)**:
+   - Classifies every `GO TO` jump into 5 structural patterns:
+     - ⛔ **Early Exit** (`GO TO ...EXIT` - paragraph exit on validation failure)
+     - 🚨 **Error Branch** (`GO TO ERROR/FAIL` - jump to explicit error handler)
+     - 🔄 **Fallback** (`GO TO RETRY` - fallback execution logic)
+     - 🌀 **Loop Escape** (`GO TO` outside inner `PERFORM` loop)
+     - ⏭️ **Skip Section** (`GO TO` bypassing downstream processing)
+
+3. **Multi-Language Portfolio Sniffer**:
+   - Automatically sniffs and parses mixed directories containing **COBOL**, **IBM PL/I** (`.pli`), **HLASM Assembler** (`.asm`), and **JCL Batch Jobs** (`.jcl`).
+   - Maps full JCL chains (`JOB` -> `STEP` -> `PGM` -> `DSN Datasets`).
 
 ---
 
