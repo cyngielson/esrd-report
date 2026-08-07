@@ -22,8 +22,8 @@
 
 ---
 
-### Slide 3: Enterprise Integration Suite
-
+### Slide 3: Enterprise Integration & User Experience Suite
+- **Visual Desktop GUI (`coboliq-desktop v0.8.0`)**: Built with Tauri & Rust. Provides an intuitive, dark-mode native desktop dashboard for non-technical executives and actuaries—no terminal or CLI commands required.
 - **VS Code LSP Extension (`coboliq-0.1.0.vsix`)**: Live inline formula previews, copybook lineage hover cards, and AST diagnostic warnings (`NUMERIC_TRUNCATION`, `STATE_LEAK`) directly in developers' IDEs.
 - **Model Context Protocol (MCP Server)**: Standardized JSON-RPC integration feeding deterministic Ground Truth directly into AI coding agents.
 - **100% Air-Gapped / US Cloud Compliance**: Zero network call-home dependencies. Deploys on-premise or within AWS GovCloud / US Telco Air-Gapped VPCs.
