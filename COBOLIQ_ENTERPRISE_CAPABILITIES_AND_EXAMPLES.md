@@ -1,4 +1,8 @@
 # CobolIQ — Enterprise Capabilities, Detection Scans & Usage Guide
+> [!NOTE]
+> **EVALUATION & ARCHITECTURE SPECIFICATION — COBOLIQ ENTERPRISE SUITE v0.99**  
+> *Proprietary Synaptic Logic Synthesizer (SLS) Engine. 100% Founder-Owned Intellectual Property.*
+
 > **Source-Cited Evidence & Practical Execution Specs**
 
 ---

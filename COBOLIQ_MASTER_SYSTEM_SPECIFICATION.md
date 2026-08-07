@@ -1,4 +1,8 @@
 # CobolIQ — Master System Specification & Architecture Overview
+> [!NOTE]
+> **EVALUATION & ARCHITECTURE SPECIFICATION — COBOLIQ ENTERPRISE SUITE v0.99**  
+> *Proprietary Synaptic Logic Synthesizer (SLS) Engine. 100% Founder-Owned Intellectual Property.*
+
 > **Core Motto**: *Stop Migrating. Start Understanding Ground Truth.*
 
 ---

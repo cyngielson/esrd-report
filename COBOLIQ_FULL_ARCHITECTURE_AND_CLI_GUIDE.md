@@ -1,4 +1,8 @@
 # CobolIQ — Full Architecture, CLI Reference & QUAD-RAG Guide
+> [!NOTE]
+> **EVALUATION & ARCHITECTURE SPECIFICATION — COBOLIQ ENTERPRISE SUITE v0.99**  
+> *Proprietary Synaptic Logic Synthesizer (SLS) Engine. 100% Founder-Owned Intellectual Property.*
+
 > **Deterministic Mainframe Knowledge Engine & Semantic Vector Intelligence**
 
 ---
