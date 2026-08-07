@@ -1,0 +1,2015 @@
+{
+  "root_path": "d:\\cobol\\ESRDCY212MainframePricerReleaseFiles",
+  "issues": [
+    {
+      "severity": "Error",
+      "category": "MultiExitParagraph",
+      "program_id": "ESDRV212",
+      "paragraph": "0100-ENTER-DRIVER",
+      "line": 380,
+      "message": "Multi-exit spaghetti: paragraph `0100-ENTER-DRIVER` has 26 GO TO escape paths (threshold: 5). Impossible to reason about execution flow — each path must be reviewed for lost transactions.",
+      "detail": "L380-L822. Pattern observed in IBM Bank-of-Z BNK1CAC/ED010 (13 paths), BNK1TFN/VA010 (10 paths). Each GO TO bypasses normal exit — silent data corruption risk on exception paths."
+    },
+    {
+      "severity": "Error",
+      "category": "MultiExitParagraph",
+      "program_id": "ESDRV212",
+      "paragraph": "0100-EXIT-DRIVER",
+      "line": 823,
+      "message": "Multi-exit spaghetti: paragraph `0100-EXIT-DRIVER` has 18 GO TO escape paths (threshold: 5). Impossible to reason about execution flow — each path must be reviewed for lost transactions.",
+      "detail": "L823-L956. Pattern observed in IBM Bank-of-Z BNK1CAC/ED010 (13 paths), BNK1TFN/VA010 (10 paths). Each GO TO bypasses normal exit — silent data corruption risk on exception paths."
+    },
+    {
+      "severity": "Error",
+      "category": "MultiExitParagraph",
+      "program_id": "ESDRV212",
+      "paragraph": "0800-FIND-BUNDLED-CBSA-WI",
+      "line": 1045,
+      "message": "Multi-exit spaghetti: paragraph `0800-FIND-BUNDLED-CBSA-WI` has 6 GO TO escape paths (threshold: 5). Impossible to reason about execution flow — each path must be reviewed for lost transactions.",
+      "detail": "L1045-L1114. Pattern observed in IBM Bank-of-Z BNK1CAC/ED010 (13 paths), BNK1TFN/VA010 (10 paths). Each GO TO bypasses normal exit — silent data corruption risk on exception paths."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 443,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "1200-INITIALIZATION",
+      "line": 573,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `1200-INITIALIZATION` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 685,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 685,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 685,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 685,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 685,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 903,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 903,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 972,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 972,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 972,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 972,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1189,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL117",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1189,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 481,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "1200-INITIALIZATION",
+      "line": 621,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `1200-INITIALIZATION` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 756,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 756,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 756,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 756,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 756,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 998,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 998,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1067,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1067,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1067,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1067,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1284,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1284,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL122",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1354,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 510,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "1200-INITIALIZATION",
+      "line": 650,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `1200-INITIALIZATION` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 785,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 785,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 785,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 785,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 785,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1027,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1027,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1096,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1096,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1096,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1096,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1313,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1313,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL130",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1383,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 553,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 553,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "1200-INITIALIZATION",
+      "line": 696,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `1200-INITIALIZATION` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 831,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 831,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 831,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 831,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 831,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1073,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1073,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1142,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1142,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1142,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1142,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1359,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1359,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL140",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1429,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 586,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 586,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "1200-INITIALIZATION",
+      "line": 729,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `1200-INITIALIZATION` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1106,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1106,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1175,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1175,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1175,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1175,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1392,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1392,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL151",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1462,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 618,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 618,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "1200-INITIALIZATION",
+      "line": 772,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `1200-INITIALIZATION` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 908,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 908,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 908,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 908,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 908,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1158,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1158,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1227,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1227,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1227,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1227,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1455,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1455,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL160",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1525,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 641,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 822,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1197,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1197,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1266,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1266,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1266,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1266,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1495,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1495,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL170",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1565,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 644,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 828,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1203,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1203,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1272,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1272,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1272,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1272,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1501,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1501,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL171",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1571,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 660,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 849,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1232,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1232,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1301,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1301,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1301,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1301,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1530,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1530,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL180",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1600,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 675,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 864,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1247,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1247,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1316,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1316,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1316,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1316,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1545,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1545,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL191",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1615,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 690,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 879,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1262,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1262,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1331,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1331,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1331,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1331,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1560,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1560,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL200",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1630,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 717,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 906,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1317,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1317,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1386,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1386,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1386,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1386,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1615,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1615,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL202",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1685,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "0000-START-TO-FINISH",
+      "line": 758,
+      "message": "Potential state leak: Flag `P-PROV-WAIVE-BLEND-PAY-INDIC` is set to 'Y' in paragraph `0000-START-TO-FINISH` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `PEDIATRIC-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `LOW-BMI-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `H-BUN-ONSET-FACTOR` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `ONSET-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2000-CALCULATE-BUNDLED-FACTORS",
+      "line": 947,
+      "message": "Potential state leak: Flag `MOVED-CORMORBIDS` is set to 'Y' in paragraph `2000-CALCULATE-BUNDLED-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1383,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2100-CALC-COMORBID-ADJUST",
+      "line": 1383,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2100-CALC-COMORBID-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1452,
+      "message": "Potential state leak: Flag `H-OUT-LOW-VOL-MULTIPLIER` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1452,
+      "message": "Potential state leak: Flag `LOW-VOLUME-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1452,
+      "message": "Potential state leak: Flag `H-OUT-ONSET-FACTOR` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2500-CALC-OUTLIER-FACTORS",
+      "line": 1452,
+      "message": "Potential state leak: Flag `OUTLIER-TRACK` is set to 'Y' in paragraph `2500-CALC-OUTLIER-FACTORS` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1681,
+      "message": "Potential state leak: Flag `ACUTE-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "2600-CALC-COMORBID-OUT-ADJUST",
+      "line": 1681,
+      "message": "Potential state leak: Flag `CHRONIC-COMORBID-TRACK` is set to 'Y' in paragraph `2600-CALC-COMORBID-OUT-ADJUST` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "StateLeak",
+      "program_id": "ESCAL212",
+      "paragraph": "3000-LOW-VOL-FULL-PPS-PAYMENT",
+      "line": 1751,
+      "message": "Potential state leak: Flag `TRAINING-TRACK` is set to 'Y' in paragraph `3000-LOW-VOL-FULL-PPS-PAYMENT` but is never reset to 'N' or INITIALIZEd here. Subsequent paragraph calls will reuse the dirty state.",
+      "detail": "Mainframe global variables in WORKING-STORAGE preserve state across PERFORM executions. Flags must be reset before use."
+    },
+    {
+      "severity": "Warning",
+      "category": "PerformThruGoto",
+      "program_id": "ESDRV212",
+      "paragraph": "0550-N-GET-WAGE-RATE",
+      "line": 977,
+      "message": "PERFORM THRU + GO TO coupling: `0550-N-GET-WAGE-RATE` uses GO TO `0550-N-GET-WAGE-RATE` and is within a THRU range - classic COBOL spaghetti",
+      "detail": "PERFORM THRU relies on paragraph ordering; GO TO inside the range creates hidden control flow."
+    },
+    {
+      "severity": "Warning",
+      "category": "PerformThruGoto",
+      "program_id": "ESDRV212",
+      "paragraph": "0750-GET-COMP-CBSA-RATE",
+      "line": 1026,
+      "message": "PERFORM THRU + GO TO coupling: `0750-GET-COMP-CBSA-RATE` uses GO TO `0750-GET-COMP-CBSA-RATE` and is within a THRU range - classic COBOL spaghetti",
+      "detail": "PERFORM THRU relies on paragraph ordering; GO TO inside the range creates hidden control flow."
+    },
+    {
+      "severity": "Warning",
+      "category": "PerformThruGoto",
+      "program_id": "ESDRV212",
+      "paragraph": "0850-GET-BUNDLED-CBSA-RATE",
+      "line": 1122,
+      "message": "PERFORM THRU + GO TO coupling: `0850-GET-BUNDLED-CBSA-RATE` uses GO TO `0850-GET-BUNDLED-CBSA-RATE` and is within a THRU range - classic COBOL spaghetti",
+      "detail": "PERFORM THRU relies on paragraph ordering; GO TO inside the range creates hidden control flow."
+    }
+  ],
+  "error_count": 3,
+  "warning_count": 220,
+  "info_count": 0
+}

@@ -1,0 +1,170 @@
+{
+  "tables": [
+    {
+      "name": "WWD-ENTRY",
+      "columns": [
+        {
+          "name": "WWD-DATE",
+          "pic": "X(8)",
+          "sql_type": "VARCHAR(8)"
+        },
+        {
+          "name": "WWD-DTCD",
+          "pic": "9(3)",
+          "sql_type": "SMALLINT"
+        }
+      ],
+      "record_occurs": 1
+    },
+    {
+      "name": "WWM-ENTRY",
+      "columns": [
+        {
+          "name": "WWM-MSA",
+          "pic": "X(4)",
+          "sql_type": "VARCHAR(4)"
+        },
+        {
+          "name": "WWM-PTR",
+          "pic": "9(5)",
+          "sql_type": "INTEGER"
+        }
+      ],
+      "record_occurs": 389
+    },
+    {
+      "name": "WWW-ENTRY",
+      "columns": [
+        {
+          "name": "WWW-DTCD",
+          "pic": "9(3)",
+          "sql_type": "SMALLINT"
+        },
+        {
+          "name": "WWW-WART1",
+          "pic": "9(4)V9(2)",
+          "sql_type": "DECIMAL(6,2)"
+        },
+        {
+          "name": "WWW-WART2",
+          "pic": "9(4)V9(2)",
+          "sql_type": "DECIMAL(6,2)"
+        }
+      ],
+      "record_occurs": 388
+    },
+    {
+      "name": "COM-DATE-ENTRY",
+      "columns": [
+        {
+          "name": "COM-DATE",
+          "pic": "X(08)",
+          "sql_type": "VARCHAR(8)"
+        },
+        {
+          "name": "COM-DATE-CODE",
+          "pic": "9(03)",
+          "sql_type": "SMALLINT"
+        }
+      ],
+      "record_occurs": 8
+    },
+    {
+      "name": "COM-CBSA-ENTRY",
+      "columns": [
+        {
+          "name": "COM-CBSA-VALUE",
+          "pic": "X(05)",
+          "sql_type": "VARCHAR(5)"
+        },
+        {
+          "name": "COM-PTR",
+          "pic": "9(05)",
+          "sql_type": "INTEGER"
+        }
+      ],
+      "record_occurs": 463
+    },
+    {
+      "name": "COM-WI-ENTRY",
+      "columns": [
+        {
+          "name": "COM-WI-DATE-CODE",
+          "pic": "9(03)",
+          "sql_type": "SMALLINT"
+        },
+        {
+          "name": "COM-WAGE-INDEX",
+          "pic": "9V9(04)",
+          "sql_type": "DECIMAL(8,4)"
+        }
+      ],
+      "record_occurs": 3612
+    },
+    {
+      "name": "BUN-DATE-ENTRY",
+      "columns": [
+        {
+          "name": "BUN-DATE",
+          "pic": "X(08)",
+          "sql_type": "VARCHAR(8)"
+        },
+        {
+          "name": "BUN-DATE-CODE",
+          "pic": "9(03)",
+          "sql_type": "SMALLINT"
+        }
+      ],
+      "record_occurs": 11
+    },
+    {
+      "name": "BUN-CBSA-ENTRY",
+      "columns": [
+        {
+          "name": "BUN-CBSA-VALUE",
+          "pic": "X(05)",
+          "sql_type": "VARCHAR(5)"
+        },
+        {
+          "name": "BUN-PTR",
+          "pic": "9(05)",
+          "sql_type": "INTEGER"
+        }
+      ],
+      "record_occurs": 505
+    },
+    {
+      "name": "BUN-WI-ENTRY",
+      "columns": [
+        {
+          "name": "BUN-WI-DATE-CODE",
+          "pic": "9(03)",
+          "sql_type": "SMALLINT"
+        },
+        {
+          "name": "BUN-WAGE-INDEX",
+          "pic": "9V9(04)",
+          "sql_type": "DECIMAL(8,4)"
+        }
+      ],
+      "record_occurs": 5029
+    },
+    {
+      "name": "CHILD-HOSP-GROUP",
+      "columns": [
+        {
+          "name": "CHILD-HOSP-PROV",
+          "pic": "X(6)",
+          "sql_type": "VARCHAR(6)"
+        },
+        {
+          "name": "CHILD-HOSP-SWI",
+          "pic": "9V9(04)",
+          "sql_type": "DECIMAL(8,4)"
+        }
+      ],
+      "record_occurs": 6
+    }
+  ],
+  "total_columns": 21
+}
