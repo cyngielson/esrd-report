@@ -119,8 +119,10 @@ AI Agents (Claude, Antigravity) call CobolIQ tools natively via JSON-RPC:
 - **Architecture Fine-Tuning Required**: The generated target code starters represent the exact mathematical and logical Ground Truth of the legacy system. However, final runtime integration into the buyer's enterprise cloud or on-premise infrastructure requires architecture adaptation, fine-tuning, database ORM wiring, and integration with the buyer's specific API gateway by the buyer's engineering team.
 
 ### 5.2. Hardware-Bound Quad-Chain Security & IP Theft Prevention
-- **Cryptographic Hardware Enclave Locking (`license_chain / arborium_bridge.rs`)**: In Enterprise & Air-Gapped deployments, the CobolIQ binary is cryptographically bound to authorized corporate hardware via a Quad-Chain hardware hash (CPU ID, Motherboard UUID, MAC Address, TPM Enclave).
+- **Cryptographic Hardware Enclave Locking (`license_chain`)**: In Enterprise & Air-Gapped deployments, the CobolIQ binary is cryptographically bound to authorized corporate hardware via a Quad-Chain hardware hash (CPU ID, Motherboard UUID, MAC Address, TPM Enclave).
 - **Corporate Laptop Provisioning**: IT departments can safely provision contractor and developer laptops with CobolIQ. The Quad-Chain lock guarantees that a hired contractor or offshore developer **cannot steal, copy, or execute the binary outside of their assigned corporate laptop or authorized enterprise environment.**
+
+
 
 ### 5.3. Empirical Cross-Check: Total Capabilities Unlock vs. IBM Z Artificial Limitations
 - **Everyday System Governance & Maintenance**: CobolIQ is designed for ongoing daily system maintenance, data lineage auditing, and patching. A developer armed with `coboliq-0.1.0.vsix` can manage, patch, and audit 50-year-old COBOL codebases without needing 30 years of legacy mainframe experience.
