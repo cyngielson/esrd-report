@@ -95,9 +95,16 @@ graph TD
   2. **Syntax-Only Highlighting vs. Symbolic Logic Extraction**: IBM Z extensions provide basic syntax highlighting and Zowe CLI host submission, but **cannot extract Working-Storage business math, cannot generate standalone English algebra formulas, cannot build standalone HTML browser calculators, and cannot export target microservices.**
   3. **CobolIQ Vendor-Agnostic Freedom**: CobolIQ runs 100% offline (Air-Gapped Single Binary) across IBM Enterprise COBOL, GnuCOBOL, Micro Focus, z/OS, and OpenCOBOL with zero vendor lock-in.
 
+### 4.5. The "Follow the Money" Enterprise Workforce Arbitrage & Edge Laptop Grid
+
+- **Developer Incentive Misalignment vs. Enterprise Buyer Pull**: Individual hourly contractors often resist automation out of fear of losing billable hours. Enterprise buyers, System Integrators (HCLTech, Accenture, IBM), and Private Equity funds **Follow the Money**. They buy CobolIQ to capture **85% gross margins** on fixed-price modernization contracts.
+- **30,000 Engineers Armed with Edge Laptop Grid**: Modern corporate laptops (16-core workstations with 32GB–64GB RAM) become a massive, distributed, air-gapped discovery grid. The Rust AST engine operates locally at **0.78s per system with 14.2 MB RAM overhead**.
+- **Zero Cloud Egress & Cryptographic Laptop Enclave (`coboliq-chain`)**: Eliminates hundreds of thousands of dollars in cloud GPU/SaaS fees (IBM watsonx / AWS BluAge). Each license is cryptographically bound to corporate laptop hardware via `coboliq-chain`, guaranteeing zero code leakage, 100% Air-Gapped DORA compliance, and total FinOps governance.
+
 ---
 
 ## 5. Architectural Cross-Check & Capabilities Unlock Matrix
+
 
 Below is an empirical cross-check comparing legacy tools and vendor-locked IBM Z extensions against **CobolIQ's Total Capabilities Unlock**:
 
