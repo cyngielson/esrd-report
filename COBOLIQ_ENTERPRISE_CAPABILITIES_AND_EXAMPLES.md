@@ -122,6 +122,13 @@ AI Agents (Claude, Antigravity) call CobolIQ tools natively via JSON-RPC:
 - **Cryptographic Hardware Enclave Locking (`license_chain / arborium_bridge.rs`)**: In Enterprise & Air-Gapped deployments, the CobolIQ binary is cryptographically bound to authorized corporate hardware via a Quad-Chain hardware hash (CPU ID, Motherboard UUID, MAC Address, TPM Enclave).
 - **Corporate Laptop Provisioning**: IT departments can safely provision contractor and developer laptops with CobolIQ. The Quad-Chain lock guarantees that a hired contractor or offshore developer **cannot steal, copy, or execute the binary outside of their assigned corporate laptop or authorized enterprise environment.**
 
+### 5.3. Total System Governance vs. IBM Z Vendor-Locked VS Code Extensions
+- **Everyday System Governance & Maintenance**: CobolIQ is designed for ongoing daily system maintenance, data lineage auditing, and patching. A developer armed with `coboliq-0.1.0.vsix` can manage, patch, and audit 50-year-old COBOL codebases without needing 30 years of legacy mainframe experience.
+- **Comparison with IBM Z Extensions (IBM Z Open Editor / Wazi)**:
+  - **IBM Z Open Editor**: Strictly vendor-locked to IBM Z hardware and z/OS compilers. Provides basic syntax highlighting and JCL submission, but **lacks symbolic logic extraction, cannot reduce Working-Storage math to English algebra, and cannot generate standalone HTML calculators.**
+  - **CobolIQ Advantage**: 100% vendor-agnostic (IBM, Micro Focus, GnuCOBOL, OpenCOBOL), 100% Air-Gapped, and extracts deterministic business math with 0% LLM hallucination.
+
+
 ---
 *CobolIQ Enterprise Suite — Ground-Truth System Intelligence.*
 

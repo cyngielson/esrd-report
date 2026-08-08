@@ -77,6 +77,14 @@ graph TD
 * **Architecture Fine-Tuning Principle**: Extracted business algebra and generated microservice starters (Python/Django, Java/Spring, Rust, C++) provide 100% AST Ground Truth. Target runtime integration requires architecture adaptation, ORM wiring, and fine-tuning by the buyer's engineering team to fit their specific cloud/on-premise enterprise infrastructure.
 * **Hardware-Bound Quad-Chain License Security (`arborium_bridge.rs`)**: In enterprise deployments, the CobolIQ binary is cryptographically bound to corporate hardware via a Quad-Chain hardware enclave hash (CPU ID, Motherboard UUID, MAC, TPM). This guarantees that a hired contractor or developer **cannot steal, copy, or execute the binary outside of their assigned corporate laptop or authorized enterprise environment.**
 
+### 4.4. Total System Governance vs. IBM Z Vendor-Locked Extensions
+* **Beyond 1-Time Migration — Everyday System Governance**: CobolIQ is not merely a single-use migration utility. An offshore or in-house developer armed with `coboliq-0.1.0.vsix` gains **Total System Governance** — enabling them to perform everyday code maintenance, audit complex business logic, patch production bugs, and trace data lineage on 50-year-old COBOL/zOS systems without needing decades of mainframe experience.
+* **Why IBM Z Extensions (IBM Z Open Editor / Wazi) Fall Short**: 
+  1. **Proprietary Vendor Lock-In**: IBM Z extensions (IBM Z Open Editor, IBM Wazi) are strictly vendor-locked to IBM Z hardware, IBM host compilers, and z/OS dependencies.
+  2. **Syntax-Only Highlighting vs. Symbolic Logic Extraction**: IBM Z extensions provide basic syntax highlighting and Zowe CLI host submission, but **cannot extract Working-Storage business math, cannot generate standalone English algebra formulas, cannot build standalone HTML browser calculators, and cannot export target microservices.**
+  3. **CobolIQ Vendor-Agnostic Freedom**: CobolIQ runs 100% offline (Air-Gapped Single Binary) across IBM Enterprise COBOL, GnuCOBOL, Micro Focus, z/OS, and OpenCOBOL with zero vendor lock-in.
+
+
 
 ---
 
