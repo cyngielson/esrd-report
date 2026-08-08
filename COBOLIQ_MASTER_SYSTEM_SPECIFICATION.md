@@ -73,6 +73,11 @@ graph TD
 * **DORA Article 8 & EU/US Compliance**: Provides source-cited data lineage and execution traces required for financial software auditing.
 * **100% Air-Gapped Airspace**: Operates completely offline inside client VPCs (AWS GovCloud, Azure Confidential, On-Premise Docker) with **zero call-home network dependencies**.
 
+### 4.3. Enterprise Deployment & Hardware Security Principles
+* **Architecture Fine-Tuning Principle**: Extracted business algebra and generated microservice starters (Python/Django, Java/Spring, Rust, C++) provide 100% AST Ground Truth. Target runtime integration requires architecture adaptation, ORM wiring, and fine-tuning by the buyer's engineering team to fit their specific cloud/on-premise enterprise infrastructure.
+* **Hardware-Bound Quad-Chain License Security (`arborium_bridge.rs`)**: In enterprise deployments, the CobolIQ binary is cryptographically bound to corporate hardware via a Quad-Chain hardware enclave hash (CPU ID, Motherboard UUID, MAC, TPM). This guarantees that a hired contractor or developer **cannot steal, copy, or execute the binary outside of their assigned corporate laptop or authorized enterprise environment.**
+
+
 ---
 
 ## 5. Summary Matrix: CobolIQ vs. Legacy Alternatives
