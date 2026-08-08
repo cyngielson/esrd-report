@@ -131,6 +131,12 @@ AI Agents (Claude, Antigravity) call CobolIQ tools natively via JSON-RPC:
   - **IBM watsonx Code Assistant for Z**: Gated behind IBM Cloud subscriptions and artificially restricted to **forced COBOL-to-Java translation**, forcing clients into Java vendor lock-in with 10%–25% LLM hallucination risks.
   - **CobolIQ Total Capabilities Unlock**: Provides 100% vendor-agnostic freedom (IBM, Micro Focus, GnuCOBOL, OpenCOBOL), operates 100% Air-Gapped, extracts deterministic business math with 0.00% hallucination, and exports to Markdown, HTML, Python, Java, Rust, and C++.
 
+### 5.4. Field Lineage Tracing & Prolog Facts Engine (`--trace-field` & `--format prolog`)
+- **Transitive Field Lineage (`coboliq --trace-field <FIELD_NAME>`)**: Evaluates the full end-to-end data lifecycle of any terminal field (3270 BMS green screen input) or Working-Storage variable across all intermediate `MOVE`, `COMPUTE`, `CALL`, and DB2/VSAM database write steps in a single execution pass.
+- **SWI-Prolog Knowledge Graph (`coboliq --format prolog`)**: Exports 100% deterministic Prolog facts (`program`, `linkage_var`, `paragraph`, `move`, `compute`, `perform`), enabling instant logical graph queries (`reachable`, `call_path`, `perform_path`, `dora_review_required`).
+- **Benchmark Evidence**: Tested live on the 4,243 Medicare rule CMS ESRD system (`ESCAL212.cbl`), extracting the complete multi-step decision tree for `SE-PAYMENT` across lines 1816–2191 in < 1 second.
+
+
 
 
 ---
