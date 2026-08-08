@@ -108,6 +108,8 @@ Below is an empirical cross-check comparing legacy tools and vendor-locked IBM Z
 | **Symbolic Math Extraction**       | ❌ None (Requires Manual Reading)        | ❌ None (Generates Java Classes)     | ❌ Probabilistic (10-25% Hallucination) | **✅ 100% Pure English Business Algebra (0% Hallucination)**                 |
 | **CICS State Leak Detection**      | ❌ Missed (JVM Session Leaks)            | ❌ Missed (Runtime Bugs)             | ❌ Human Error                          | **✅ Automated AST Sanity Diagnostic Scan**                                  |
 | **SLS Mathematical Synaptic Engine**| ❌ None                                  | ❌ None                              | ❌ None                                 | **✅ Proprietary Closed-Form Math Synthesizer (`--sls-formulas`)**           |
+| **Multi-File Copybook Resolution** | ❌ Manual File Ingestion                 | ❌ Manual Dependency Configuration   | ❌ Single File Snippets                 | **✅ Automatic Transitive `COPY` / `CALL` Traversal in 1 Command**           |
+
 
 | **Vendor Lock-In**                 | ⚠️ Locked to IBM z/OS & Host Compilers   | ⚠️ Locked to IBM Cloud & Java Target | ⚠️ Cloud API Vendor Lock                | **✅ 100% Vendor-Agnostic (IBM, Micro Focus, GnuCOBOL, OpenCOBOL)**          |
 | **Deployment Mode**                | Requires z/OS / Zowe Host Connection     | IBM Cloud SaaS Subscription          | Public / Private Cloud API              | **✅ 100% Air-Gapped Single Binary (Zero Network Call-Home)**                |
